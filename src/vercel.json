@@ -1,6 +1,8 @@
 {
   "version": 2,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/src/index.mjs" }
+    { "source": "/(.*)", "destination": "/src" }
   ]
 }
+
+
