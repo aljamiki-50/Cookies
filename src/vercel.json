@@ -2,14 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "Cookies/src/index.mjs",
+      "src": "src/index.mjs",
       "use": "@vercel/node"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "Cookies/src/index.mjs"
+      "dest": "src/index.mjs"
     }
   ]
 }
