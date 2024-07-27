@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Notes</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Recipe Notes</h1>
+            <ul class="nav-links">
+
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h2>Our Recipes</h2>
+        <h2><a href="/make">Add your own Recipe</a></h2>
+
+
+
+        <div class="grid">
+            <% for (var i=0; i < recipes.length ; i++) { %>
+                <div class="recipe-card">
+                    <img src="https://via.placeholder.com/300x200" alt="Spaghetti Carbonara">
+                    <div class="content">
+                        <h3>
+                            <%= recipes[i].title %>
+                        </h3>
+                        <h4>Ingredients</h4>
+                        <p>
+                            <%= recipes[i].ingredients %>
+                        </p>
+                        <h4>Instructions</h4>
+                        <p>
+                            <%= recipes[i].instructions %>
+                        </p>
+
+                    </div>
+                </div>
+
+                <% } %>
+
+
+        </div>
+    </div>
+</body>
+<!-- <script src="/db.js"></script>
+<script src="/app.js"></script>
+<script src="./script.js"></script> -->
+
+</html>
