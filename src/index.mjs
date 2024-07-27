@@ -1,5 +1,5 @@
 import express, { response } from "express";
-import { GetAllData, AddRecipee, getbyid } from "../db/db.mjs";
+import { GetAllData, AddRecipe, getbyid } from "../db/db.mjs";
 const app = express();
 
 app.set("view engine", "ejs");
@@ -28,7 +28,7 @@ app.get("/make", (req, res) => {
 app.post("/recipes", async (req, res) => {
   const { title, ingredients, instructions } = req.body;
 
-  const added = await AddRecipee(title, ingredients, instructions);
+  const added = await AddRecipe(title, ingredients, instructions);
 
   res.redirect("/");
 });
