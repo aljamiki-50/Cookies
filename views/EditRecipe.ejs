@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add a Recipe</title>
-    <link rel="stylesheet" href="addrecipe.css">
+    <link rel="stylesheet" type="text/css" href="/addrecipe.css">
 </head>
+
 <body>
     <nav class="navbar">
         <div class="container">
             <h1 class="logo">Recipe Notes</h1>
             <ul class="nav-links">
-                <li><a href="/">All Recipe</a></li>
-                <!-- <li><a href="#">Add Recipe</a></li>
-                <li><a href="#">Contact</a></li> -->
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Add Recipe</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -23,15 +25,18 @@
         <form class="recipe-form" action="/recipes" method="post">
             <div class="form-group">
                 <label for="title">Recipe Title</label>
-                <input type="text" id="title" name="title" required>
+                <input type="text" value="<%= recipe[0].title %>" id="title" name="title" required>
             </div>
             <div class="form-group">
                 <label for="ingredients">Ingredients</label>
-                <textarea id="ingredients" name="ingredients" rows="5" required></textarea>
+                <textarea id="ingredients" name="ingredients" value="<%= recipe[0].ingredients %>"
+                    placeholder="<%= recipe[0].ingredients %>" rows="5" required><%= recipe[0].ingredients %></textarea>
             </div>
             <div class="form-group">
                 <label for="instructions">Instructions</label>
-                <textarea id="instructions" name="instructions" rows="5" required></textarea>
+                <textarea id="instructions" name="instructions" value="<%= recipe[0].instructions %>"
+                    placeholder="<%= recipe[0].instructions %>" rows="5"
+                    required><%= recipe[0].instructions %></textarea>
             </div>
             <div class="form-group">
                 <label for="image">Upload Image</label>
@@ -41,4 +46,5 @@
         </form>
     </div>
 </body>
+
 </html>

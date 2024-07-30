@@ -1,82 +1,145 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
 .container {
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .navbar {
-    background: #333;
-    color: #fff;
-    padding: 1em 0;
+  background: #333;
+  color: #fff;
+  padding: 1em 0;
 }
 
 .navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .navbar .logo {
-    margin: 0;
+  margin: 0;
 }
 
 .navbar .nav-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
+  list-style: none;
+  display: flex;
+  margin: 0;
 }
 
 .navbar .nav-links li {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .navbar .nav-links a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 h2 {
-    text-align: center;
-    margin: 20px 0;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
 }
 
 .recipe-card {
-    background: #fff;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .recipe-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 .recipe-card .content {
-    padding: 15px;
+  padding: 15px;
 }
 
 .recipe-card h3 {
-    margin: 0 0 10px;
+  margin: 0 0 10px;
 }
 
 .recipe-card h4 {
-    margin: 10px 0 5px;
+  margin: 10px 0 5px;
 }
 
 .recipe-card p {
-    margin: 5px 0;
+  margin: 5px 0;
+}
+
+#recipe-card_buttons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.Edit,
+.delete {
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.Edit {
+  background-color: #4caf50; /* Green */
+  color: #ffffff;
+  
+}
+
+.Edit:hover {
+  background-color: #3e8e41; /* Dark Green */
+}
+
+.delete {
+  background-color: #ff3737; /* Red */
+  color: #ffffff;
+}
+
+.delete:hover {
+  background-color: #ff1a1a; /* Dark Red */
+}
+
+/* 
+.delete{
+
+   
+    margin: 10;
+    background-color: yellow;
+     
+} */
+
+#recipe {
+  padding-inline: 100px;
+  margin-top: 10%;
+  display: grid;
+  place-content: center;
+  place-items: center;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  div {
+    h2 {
+      text-align: left;
+      font-size: 32px;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center;
+  }
 }

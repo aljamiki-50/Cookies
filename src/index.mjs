@@ -1,5 +1,5 @@
 import express, { response } from "express";
-import { GetAllData, AddRecipe, getbyid } from "../db/db.mjs";
+import { GetAllData, AddRecipe, getbyid, Delete } from "../db/db.mjs";
 const app = express();
 
 app.set("view engine", "ejs");
@@ -33,6 +33,40 @@ app.post("/recipes", async (req, res) => {
   res.redirect("/");
 });
 
+app.get("/recipes/:id/Edit", async (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  if (isNaN(id)) {
+    console.log("Invalid ID");
+    res.status(400).send("Invalid ID");
+    return;
+  }
+
+  const found = await getbyid(id);
+  console.log("here what we found", found);
+  res.render("EditRecipe", {
+    recipe: found,
+  });
+});
+
+app.post("/recipes/:id/delete", async (req, res) => {
+  const id = parseInt(req.params.id, 10);
+  if (isNaN(id)) {
+    console.log("Invalid ID");
+    res.status(400).send("Invalid ID");
+    return;
+  }
+
+  try {
+    const deletedRows = await Delete(id);
+    console.log(deletedRows);
+    res.redirect("/");
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Error deleting recipe");
+  }
+});
+
+// /recipes/ recipes[i].id/delete
 // erorr handling here
 
 app.use((err, req, res, next) => {

@@ -27,6 +27,18 @@ export async function getbyid(id) {
   return rows;
 }
 
+
+export async function Delete(id) {
+  if (typeof id !== 'number' || !Number.isInteger(id)) {
+    console.log('You added a non-integer value');
+    return;
+  }
+
+  const [rows] = await pool.query('DELETE FROM Recipes WHERE recipe_id = ?', [id]);
+  return rows;
+}
+
+
 export async function AddRecipe(title, ingredients, instructions) {
   const [result] = await pool.query('INSERT INTO Recipes (title, ingredients, instructions) VALUES (?, ?, ?)', [title, ingredients, instructions]);
   return getbyid(result.insertId);
